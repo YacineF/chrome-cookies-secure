@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/YacineF/chrome-cookies-secure.git"
+    "url": "https://github.com/YacineF/vivaldi-cookies-secure.git"
   },
   "dependencies": {
     "int": "^0.2.0",

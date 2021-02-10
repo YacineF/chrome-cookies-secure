@@ -325,7 +325,7 @@ const getCookies = async (uri, format, callback, profile) => {
 							cookie.value = dpapi.unprotectData(encryptedValue, null, 'CurrentUser').toString('utf-8');
 
 						} else if (encryptedValue[0] == 0x76 && encryptedValue[1] == 0x31 && encryptedValue[2] == 0x30 ){
-							localState = JSON.parse(fs.readFileSync(os.homedir() + '/AppData/Local/Google/Chrome/User Data/Local State'));
+							localState = JSON.parse(fs.readFileSync(os.homedir() + '/AppData/Local/Vivaldi/User Data/Local State'));
 							b64encodedKey = localState.os_crypt.encrypted_key;
 							encryptedKey = new Buffer.from(b64encodedKey,'base64');
 							key = dpapi.unprotectData(encryptedKey.slice(5, encryptedKey.length), null, 'CurrentUser');

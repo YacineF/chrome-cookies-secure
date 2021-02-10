@@ -257,12 +257,12 @@ const getCookies = async (uri, format, callback, profile) => {
 	
 	} else if (process.platform === 'linux') {
 	
-		path = process.env.HOME + `/.config/google-chrome/${profile}/Cookies`;
+		path = process.env.HOME + `/.config/vivaldi/${profile}/Cookies`;
 		ITERATIONS = 1;
 	
 	} else if (process.platform === 'win32') {
 
-		path = os.homedir() + `\\AppData\\Local\\Google\\Chrome\\User Data\\${profile}\\Cookies`;
+		path = os.homedir() + `\\AppData\\Local\\Vivaldi\\User Data\\${profile}\\Cookies`;
 
 	} else {
 	

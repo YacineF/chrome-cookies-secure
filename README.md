@@ -1,4 +1,4 @@
-# chrome-cookies-secure
+# vivaldi-cookies-secure
 
 Extract encrypted Google Chrome cookies for a url on Mac OS X, Windows, or Linux
 

@@ -1,10 +1,10 @@
-const chrome = require('chrome-cookies-secure');
+const vivaldi = require('vivaldi-cookies-secure');
 const puppeteer = require('puppeteer');
 
 const url = 'https://www.yourUrl.com/';
 
 const getCookies = (callback) => {
-    chrome.getCookies(url, 'puppeteer', function(err, cookies) {
+    vivaldi.getCookies(url, 'puppeteer', function(err, cookies) {
         if (err) {
             console.log(err, 'error');
             return

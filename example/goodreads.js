@@ -1,6 +1,6 @@
-var chrome = require('../index');
+var vivaldi = require('../index');
 
-chrome.getCookies('https://www.goodreads.com', function (err, cookies) {
+vivaldi.getCookies('https://www.goodreads.com', function (err, cookies) {
 
 	if (err) {
 		console.error(err);

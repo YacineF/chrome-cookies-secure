@@ -1,11 +1,11 @@
 # vivaldi-cookies-secure
 
-Extract encrypted Google Chrome cookies for a url on Mac OS X, Windows, or Linux
+Extract encrypted Vivaldi cookies for a url on Mac OS X, Windows, or Linux
 
 ## Installation
 
 ```
-npm install chrome-cookies-secure
+npm install vivaldi-cookies-secure
 ```
 
 ## API
@@ -36,8 +36,8 @@ basic usage
 -----------
 
 ```javascript
-const chrome = require('chrome-cookies-secure');
-chrome.getCookies('https://www.example.com/path/', function(err, cookies) {
+const vivaldi = require('vivaldi-cookies-secure');
+vivaldi.getCookies('https://www.example.com/path/', function(err, cookies) {
 	console.log(cookies);
 });
 ```
@@ -47,9 +47,9 @@ jar used with request
 
 ```javascript
 const request = require('request');
-const chrome = require('chrome-cookies-secure');
+const vivaldi = require('vivaldi-cookies-secure');
 
-chrome.getCookies('https://www.example.com/', 'jar', function(err, jar) {
+vivaldi.getCookies('https://www.example.com/', 'jar', function(err, jar) {
 	request({url: 'https://www.example.com/', jar: jar}, function (err, response, body) {
 		console.log(body);
 	});
@@ -57,17 +57,17 @@ chrome.getCookies('https://www.example.com/', 'jar', function(err, jar) {
 
 ```
 
-puppeteer with specific Chrome profile
+puppeteer with specific Vivaldi profile
 ---------------------
 
 ```javascript
-const chrome = require('chrome-cookies-secure');
+const vivaldi = require('vivaldi-cookies-secure');
 const puppeteer = require('puppeteer');
 
 const url = 'https://www.yourUrl.com/';
 
 const getCookies = (callback) => {
-    chrome.getCookies(url, 'puppeteer', function(err, cookies) {
+    vivaldi.getCookies(url, 'puppeteer', function(err, cookies) {
         if (err) {
             console.log(err, 'error');
             return
@@ -93,14 +93,14 @@ getCookies(async (cookies) => {
 
 ## Limitations
 
-On OS X, this module requires Keychain Access to read the Google Chrome encryption key. The first time you use it, it will popup this dialog:
+On OS X, this module requires Keychain Access to read the Vivaldi encryption key. The first time you use it, it will popup this dialog:
 
-![image](https://raw.githubusercontent.com/bertrandom/chrome-cookies-secure/gh-pages/access.png)
+![image](https://raw.githubusercontent.com/bertrandom/vivaldi-cookies-secure/gh-pages/access.png)
 
-The SQLite database that Google Chrome stores its cookies is only persisted to every 30 seconds or so, so this can explain while you'll see a delay between which cookies your browser has access to and this module.
+The SQLite database that Vivaldi stores its cookies is only persisted to every 30 seconds or so, so this can explain while you'll see a delay between which cookies your browser has access to and this module.
 
 ## License
 
 This software is free to use under the MIT license. See the [LICENSE file][] for license text and copyright information.
 
-[LICENSE file]: https://github.com/bertrandom/chrome-cookies-secure/blob/master/LICENSE.md
+[LICENSE file]: https://github.com/bertrandom/vivaldi-cookies-secure/blob/master/LICENSE.md

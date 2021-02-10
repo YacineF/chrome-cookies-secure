@@ -62,7 +62,7 @@ function getDerivedKey(callback) {
 	if (process.platform === 'darwin') {
 
 		keytar = require('keytar');
-		keytar.getPassword('Chrome Safe Storage', 'Chrome').then(function(chromePassword) {
+		keytar.getPassword('Vivaldi Storage', 'Vivaldi').then(function(chromePassword) {
 			crypto.pbkdf2(chromePassword, SALT, ITERATIONS, KEYLENGTH, 'sha1', callback);
 		});
 
@@ -252,7 +252,7 @@ const getCookies = async (uri, format, callback, profile) => {
 
 	if (process.platform === 'darwin') {
 
-		path = process.env.HOME + `/Library/Application Support/Google/Chrome/${profile}/Cookies`;
+		path = process.env.HOME + `/Library/Application Support/Vivaldi/${profile}/Cookies`;
 		ITERATIONS = 1003;
 	
 	} else if (process.platform === 'linux') {
